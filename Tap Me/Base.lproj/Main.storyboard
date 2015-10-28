@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGG-1X-veI">
-                                <rect key="frame" x="275" y="70" width="50" height="21"/>
+                                <rect key="frame" x="275.5" y="50" width="49.5" height="20.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Nm7-M9-aJB"/>
@@ -26,9 +26,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.62745098039215685" green="0.86274509803921573" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Nm7-M9-aJB"/>
+                                    </mask>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYd-Zj-ldt">
-                                <rect key="frame" x="276" y="95" width="49" height="44.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYd-Zj-ldt">
+                                <rect key="frame" x="276" y="75.5" width="49" height="44.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="HYD-Ml-PX5"/>
@@ -69,7 +74,7 @@
                                 <rect key="frame" x="0.0" y="260" width="600" height="80"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <state key="normal" title="START" backgroundImage="Rectangle">
+                                <state key="normal" title="TAP" backgroundImage="Rectangle">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -77,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-bo-46S">
-                                <rect key="frame" x="180" y="155" width="60" height="40"/>
+                                <rect key="frame" x="180" y="135" width="60" height="40"/>
                                 <animations/>
                                 <state key="normal" image="Timer10"/>
                                 <state key="selected" image="Timer10_selected"/>
@@ -85,22 +90,22 @@
                                     <action selector="timer10BtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NXt-L6-EvK"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIN-oV-2Ia">
-                                <rect key="frame" x="270" y="155" width="60" height="40"/>
-                                <animations/>
-                                <state key="normal" image="Timer30"/>
-                                <state key="selected" image="Timer30_selected"/>
-                                <connections>
-                                    <action selector="timer30BtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sH4-Ez-Ays"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Etl-lf-lqU">
-                                <rect key="frame" x="360" y="155" width="60" height="40"/>
+                                <rect key="frame" x="360" y="135" width="60" height="40"/>
                                 <animations/>
                                 <state key="normal" image="Timer60"/>
                                 <state key="selected" image="Timer60_selected"/>
                                 <connections>
                                     <action selector="timer60BtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="98q-az-m13"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JIN-oV-2Ia">
+                                <rect key="frame" x="270" y="135" width="60" height="40"/>
+                                <animations/>
+                                <state key="normal" image="Timer30"/>
+                                <state key="selected" image="Timer30_selected"/>
+                                <connections>
+                                    <action selector="timer30BtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sH4-Ez-Ays"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -112,7 +117,7 @@
                             <constraint firstItem="Kfn-eK-FCU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2VW-uI-dxl"/>
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="leading" secondItem="ZO5-bo-46S" secondAttribute="trailing" constant="30" id="4dT-Cu-UIt"/>
                             <constraint firstItem="kGG-1X-veI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="5ji-1l-1J8"/>
-                            <constraint firstItem="kGG-1X-veI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="50" id="6am-1X-Fzb"/>
+                            <constraint firstItem="kGG-1X-veI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="6am-1X-Fzb"/>
                             <constraint firstItem="4gj-VN-J03" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8e1-Fm-POE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hYd-Zj-ldt" secondAttribute="bottom" constant="424" id="Bd5-Ml-Ffy"/>
                             <constraint firstItem="hYd-Zj-ldt" firstAttribute="leading" secondItem="kGG-1X-veI" secondAttribute="leading" constant="1" id="INr-cb-aqS"/>
@@ -127,11 +132,12 @@
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="top" secondItem="ZO5-bo-46S" secondAttribute="top" id="jNt-w6-1kI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lVX-4z-AUY" secondAttribute="trailing" constant="-20" id="mjW-3k-u5y"/>
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="top" secondItem="hYd-Zj-ldt" secondAttribute="bottom" constant="15" id="qOI-gH-pbh"/>
-                            <constraint firstItem="hYd-Zj-ldt" firstAttribute="top" secondItem="kGG-1X-veI" secondAttribute="bottom" constant="4" id="ses-hM-KUd"/>
+                            <constraint firstItem="hYd-Zj-ldt" firstAttribute="top" secondItem="kGG-1X-veI" secondAttribute="bottom" constant="5" id="ses-hM-KUd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="1fg-Bj-st9"/>
+                                <exclude reference="INr-cb-aqS"/>
                                 <exclude reference="Bd5-Ml-Ffy"/>
                                 <exclude reference="gXh-ml-KNH"/>
                             </mask>
@@ -139,7 +145,6 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="4gj-VN-J03" id="KE2-wx-Lfe"/>
-                        <outlet property="startAndTapBtn" destination="lVX-4z-AUY" id="9yx-0c-IMt"/>
                         <outlet property="timeLabel" destination="hYd-Zj-ldt" id="HAs-DT-l7K"/>
                         <outlet property="timer10Btn" destination="ZO5-bo-46S" id="iZU-g7-iHd"/>
                         <outlet property="timer30Btn" destination="JIN-oV-2Ia" id="pim-7h-MWC"/>

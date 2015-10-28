@@ -16,14 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer10Btn: UIButton!
     @IBOutlet weak var timer30Btn: UIButton!
     @IBOutlet weak var timer60Btn: UIButton!
-    @IBOutlet weak var startAndTapBtn: UIButton!
     
     var score: Int = 0
     var seconds: Int = 0
     var timer = NSTimer()
+    var timeSetting: Int = 0
     
-    func startGame() {
+    func startGame(setTime: Int) {
         score = 0
+        seconds = setTime
         timeLabel.text = "\(seconds)"
         scoreLabel.text = "\(score)"
         timeLabel.textColor = UIColor.whiteColor()
@@ -36,38 +37,25 @@ class ViewController: UIViewController {
         timeLabel.text = "\(seconds)"
         
         if seconds == 3 {
-            
             timeLabel.textColor = UIColor.redColor()
-            
         }
         
         if seconds == 0 {
-            
             timer.invalidate()
-            
             //显示Alert
             let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: {ACTION in self.startGame()}))
+            alert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: {ACTION in self.startGame(self.timeSetting)}))
             presentViewController(alert, animated: true, completion: nil)
-            
         }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //default timer is 30
-        seconds = 30
-        timer30Btn.selected = true
-        startGame()
-        
     }
     
     @IBAction func buttonTapped(sender: AnyObject) {
-        
-        if startAndTapBtn.titleLabel == "START" {
-            startAndTapBtn.setTitle("TAP", forState: UIControlState.Normal)
-        }
         
         if seconds > 0 {
             score++
@@ -77,30 +65,31 @@ class ViewController: UIViewController {
     }
     
     @IBAction func timer10BtnTapped(sender: AnyObject) {
-        resetButton()
+        resetButtonsAndTimer()
         timer10Btn.selected = true
-        seconds = 10
-        startGame()
+        timeSetting = 10
+        startGame(timeSetting)
     }
     
     @IBAction func timer30BtnTapped(sender: AnyObject) {
-        resetButton()
+        resetButtonsAndTimer()
         timer30Btn.selected = true
-        seconds = 30
-        startGame()
+        timeSetting = 30
+        startGame(timeSetting)
     }
     
     @IBAction func timer60BtnTapped(sender: AnyObject) {
-        resetButton()
+        resetButtonsAndTimer()
         timer60Btn.selected = true
-        seconds = 60
-        startGame()
+        timeSetting = 60
+        startGame(timeSetting)
     }
     
-    func resetButton() {
+    func resetButtonsAndTimer() {
         timer10Btn.selected = false
         timer30Btn.selected = false
         timer60Btn.selected = false
+        timer.invalidate()
     }
     
     override func didReceiveMemoryWarning() {
