@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         if seconds == 0 {
             timer.invalidate()
             //显示Alert
-            let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points in \(timeSetting) seconds.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: {ACTION in self.startGame(self.timeSetting)}))
             presentViewController(alert, animated: true, completion: nil)
         }
