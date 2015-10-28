@@ -95,7 +95,7 @@
 				TargetAttributes = {
 					E93A40021BDFB6F600B4C82F = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = C2NJP57P59;
+						DevelopmentTeam = P5Z2AV2U63;
 					};
 				};
 			};
@@ -251,7 +251,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tap Me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.abc.Tap-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.TapMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -265,7 +265,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Tap Me/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.abc.Tap-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = com.abc.TapMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -290,6 +290,7 @@
 				E93A40171BDFB6F600B4C82F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
