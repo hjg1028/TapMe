@@ -94,6 +94,7 @@ class ViewController: UIViewController {
         timer10Btn.selected = true
         timeLabel.text = "10"
         seconds = 10
+        score = 0
     }
     
     @IBAction func timer30BtnTapped(sender: AnyObject) {
@@ -101,6 +102,7 @@ class ViewController: UIViewController {
         timer30Btn.selected = true
         timeLabel.text = "30"
         seconds = 30
+        score = 0
     }
     
     @IBAction func timer60BtnTapped(sender: AnyObject) {
@@ -108,6 +110,7 @@ class ViewController: UIViewController {
         timer60Btn.selected = true
         timeLabel.text = "60"
         seconds = 60
+        score = 0
     }
     
 
