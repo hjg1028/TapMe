@@ -36,6 +36,8 @@ class ViewController: UIViewController {
         seconds--
         timeLabel.text = "\(seconds)"
         
+        let tapFrecuency = NSString(format: "%.2f", Double(timeSetting) / Double(score) * 1000)
+        
         if seconds == 3 {
             timeLabel.textColor = UIColor.redColor()
         }
@@ -43,7 +45,7 @@ class ViewController: UIViewController {
         if seconds == 0 {
             timer.invalidate()
             //显示Alert
-            let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points in \(timeSetting) seconds.", preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points in \(timeSetting) seconds. \(tapFrecuency) ms per tap on average.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: {ACTION in self.startGame(self.timeSetting)}))
             presentViewController(alert, animated: true, completion: nil)
         }
