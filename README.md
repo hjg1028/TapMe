@@ -2,7 +2,7 @@
 A simple app shows how fast you can tap the screen.
 
 ### Screenshot
-
+![image](https://raw.githubusercontent.com/hjg1028/TapMe/master/Simulator%20Screen%20Shot%20Oct%2031%2C%202015%2C%2021.16.06.png)
 
 ### Code
 ```
