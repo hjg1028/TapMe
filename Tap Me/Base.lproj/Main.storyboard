@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9527.1" systemVersion="15C27e" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9525.1"/>
@@ -48,13 +48,13 @@
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SCORE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kfn-eK-FCU">
-                                <rect key="frame" x="272.5" y="360" width="55.5" height="20.5"/>
+                                <rect key="frame" x="272" y="420" width="55.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.62745098039215685" green="0.86274509803921573" blue="0.94117647058823528" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gj-VN-J03">
-                                <rect key="frame" x="288.5" y="380.5" width="24.5" height="44.5"/>
+                                <rect key="frame" x="288" y="440" width="24.5" height="44.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="69" id="hpI-np-QPY"/>
                                 </constraints>
@@ -67,17 +67,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVX-4z-AUY">
-                                <rect key="frame" x="0.0" y="260" width="600" height="80"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
-                                <state key="normal" title="TAP" backgroundImage="Rectangle">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIm-B6-SEC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-bo-46S">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZO5-bo-46S">
                                 <rect key="frame" x="180" y="135" width="60" height="40"/>
                                 <state key="normal" image="Timer10"/>
                                 <state key="selected" image="Timer10_selected"/>
@@ -101,6 +91,20 @@
                                     <action selector="timer30BtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sH4-Ez-Ays"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVX-4z-AUY">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="GB9-Kx-Mlx"/>
+                                    <constraint firstAttribute="height" constant="200" id="cXP-EJ-RdA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <state key="normal" title="TAP" backgroundImage="Rectangle">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CIm-B6-SEC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.23529411764705882" green="0.27450980392156865" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -112,24 +116,35 @@
                             <constraint firstItem="kGG-1X-veI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="6am-1X-Fzb"/>
                             <constraint firstItem="4gj-VN-J03" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8e1-Fm-POE"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hYd-Zj-ldt" secondAttribute="bottom" constant="424" id="Bd5-Ml-Ffy"/>
+                            <constraint firstItem="lVX-4z-AUY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CFw-K8-Ybh"/>
                             <constraint firstItem="hYd-Zj-ldt" firstAttribute="leading" secondItem="kGG-1X-veI" secondAttribute="leading" constant="1" id="INr-cb-aqS"/>
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="top" secondItem="Etl-lf-lqU" secondAttribute="top" id="LBI-iY-bww"/>
                             <constraint firstItem="4gj-VN-J03" firstAttribute="top" secondItem="Kfn-eK-FCU" secondAttribute="bottom" id="MRU-RJ-h8g"/>
+                            <constraint firstItem="Kfn-eK-FCU" firstAttribute="top" secondItem="lVX-4z-AUY" secondAttribute="bottom" constant="20" id="RhZ-h6-9Yt"/>
                             <constraint firstItem="hYd-Zj-ldt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sdk-Rc-eCm"/>
                             <constraint firstItem="Kfn-eK-FCU" firstAttribute="top" secondItem="lVX-4z-AUY" secondAttribute="bottom" constant="20" id="XTZ-0P-QBq"/>
+                            <constraint firstItem="Kfn-eK-FCU" firstAttribute="leading" secondItem="lVX-4z-AUY" secondAttribute="leading" constant="20" id="a5I-c7-wnH"/>
                             <constraint firstItem="lVX-4z-AUY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aqi-y4-jzr"/>
+                            <constraint firstItem="Kfn-eK-FCU" firstAttribute="top" secondItem="lVX-4z-AUY" secondAttribute="bottom" constant="20" id="bPf-lJ-boz"/>
                             <constraint firstItem="hYd-Zj-ldt" firstAttribute="centerX" secondItem="JIN-oV-2Ia" secondAttribute="centerX" id="faM-h5-d8B"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kGG-1X-veI" secondAttribute="bottom" constant="508" id="gXh-ml-KNH"/>
                             <constraint firstItem="Etl-lf-lqU" firstAttribute="leading" secondItem="JIN-oV-2Ia" secondAttribute="trailing" constant="30" id="hhx-ok-eUR"/>
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="top" secondItem="ZO5-bo-46S" secondAttribute="top" id="jNt-w6-1kI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lVX-4z-AUY" secondAttribute="trailing" constant="-20" id="mjW-3k-u5y"/>
+                            <constraint firstItem="lVX-4z-AUY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pOg-H8-CbL"/>
                             <constraint firstItem="JIN-oV-2Ia" firstAttribute="top" secondItem="hYd-Zj-ldt" secondAttribute="bottom" constant="15" id="qOI-gH-pbh"/>
                             <constraint firstItem="hYd-Zj-ldt" firstAttribute="top" secondItem="kGG-1X-veI" secondAttribute="bottom" constant="5" id="ses-hM-KUd"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0Xj-eZ-LiB"/>
                                 <exclude reference="1fg-Bj-st9"/>
+                                <exclude reference="aqi-y4-jzr"/>
+                                <exclude reference="mjW-3k-u5y"/>
                                 <exclude reference="INr-cb-aqS"/>
+                                <exclude reference="RhZ-h6-9Yt"/>
+                                <exclude reference="XTZ-0P-QBq"/>
+                                <exclude reference="a5I-c7-wnH"/>
                                 <exclude reference="Bd5-Ml-Ffy"/>
                                 <exclude reference="gXh-ml-KNH"/>
                             </mask>
@@ -137,6 +152,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="4gj-VN-J03" id="KE2-wx-Lfe"/>
+                        <outlet property="tapButton" destination="lVX-4z-AUY" id="pwI-4X-NeQ"/>
                         <outlet property="timeLabel" destination="hYd-Zj-ldt" id="HAs-DT-l7K"/>
                         <outlet property="timer10Btn" destination="ZO5-bo-46S" id="iZU-g7-iHd"/>
                         <outlet property="timer30Btn" destination="JIN-oV-2Ia" id="pim-7h-MWC"/>
