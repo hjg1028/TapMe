@@ -9,7 +9,19 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+var records: [RecordModel] = []
+
+//设置时间格式，并将NSDate转换成String
+func stringFromDate(time: NSDate) -> String? {
+    
+    let formatter = NSDateFormatter()
+    formatter.dateFormat = "HH:mm:ss"
+    let timeString = formatter.stringFromDate(time)
+    return timeString
+    
+}
+
+class ViewController: UIViewController /*UITableViewDataSource*/ {
     
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -18,22 +30,43 @@ class ViewController: UIViewController {
     @IBOutlet weak var timer30Btn: UIButton!
     @IBOutlet weak var timer60Btn: UIButton!
     @IBOutlet weak var tapButton: UIButton!
+    @IBOutlet weak var tableView: UITableView!
     
     var score: Int = 0
     var seconds: Int = 0
     var timer = NSTimer()
     var timeSetting: Int = 0
-    var tapTime: [String] = []
+    
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+//    
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //绘制圆形按钮
+        tapButton.layer.cornerRadius = 100
+        tapButton.layer.masksToBounds = true
+        
+        //手动添加3条数据
+        records = [RecordModel(id: "1", recordDuration: "10s", everyKickTime: ["14:33:29", "14:33:31", "14:33:34", "14:33:42"], passOrNot: false, score: 4),
+            RecordModel(id: "2", recordDuration: "30s", everyKickTime: ["14:33:29", "14:33:31", "14:33:34", "14:33:42", "14:33:42", "14:33:42"], passOrNot: false, score: 6),
+            RecordModel(id: "3", recordDuration: "60s", everyKickTime: ["14:33:29", "14:33:31", "14:33:34", "14:33:42", "14:33:42", "14:33:42", "14:33:42", "14:33:42"], passOrNot: false, score: 8)]
+    }
     
     //计时初始化
     func startGame(setTime: Int) {
+        
+        //记录开始后保持屏幕常亮
+        UIApplication.sharedApplication().idleTimerDisabled = true
+        
         score = 0
-        tapTime = []
         seconds = setTime
         timeLabel.text = "\(seconds)"
         scoreLabel.text = "\(score)"
         timeLabel.textColor = UIColor.whiteColor()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("subtractTime"), userInfo: nil, repeats: true)
+        
     }
     
     //计时器及及时完成后弹出Alert
@@ -50,37 +83,25 @@ class ViewController: UIViewController {
         
         if seconds == 0 {
             timer.invalidate()
-            //显示Alert
+            //计时为0时显示Alert
             let alert = UIAlertController(title: "Time is up!", message: "You scored \(score) points in \(timeSetting) seconds. \(tapFrecuency) ms per tap on average.", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: {ACTION in self.startGame(self.timeSetting)}))
             presentViewController(alert, animated: true, completion: nil)
             
-            //输出纪录的点击时间到控制台
-            for n in 0...tapTime.count - 1 {
-                print(tapTime[n])
-            }
+            //记录结束后关闭屏幕常亮
+            UIApplication.sharedApplication().idleTimerDisabled = false
         }
         
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        //绘制圆形按钮
-        tapButton.layer.cornerRadius = 100
-        tapButton.layer.masksToBounds = true
-        
-        //保持屏幕常亮
-        UIApplication.sharedApplication().idleTimerDisabled = true
-    }
+
     
     
-    //点击Tap按钮时
+    //点击Kick按钮时
     @IBAction func buttonTapped(sender: AnyObject) {
         
         if seconds > 0 {
             score++
-            recordTapTime()
             scoreLabel.text = "\(score)"
         }
         
@@ -114,13 +135,6 @@ class ViewController: UIViewController {
         timer30Btn.selected = false
         timer60Btn.selected = false
         timer.invalidate()
-    }
-    
-    //记录每次点击的时间
-    func recordTapTime() {
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = "HH:mm:ss"
-        tapTime.append(formatter.stringFromDate(NSDate()))
     }
     
     override func didReceiveMemoryWarning() {
